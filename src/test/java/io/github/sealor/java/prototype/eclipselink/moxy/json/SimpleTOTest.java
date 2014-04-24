@@ -28,4 +28,13 @@ public class SimpleTOTest extends AbstractTest {
 		String jsonString = marshal(simpleTO);
 		assertEquals(replaceQuotes("{'isActive':true}"), jsonString);
 	}
+
+	@Test
+	public void testMarshalEnum() throws JAXBException {
+		SimpleTO simpleTO = new SimpleTO();
+		simpleTO.setOperatingSystem(OperatingSystem.LINUX);
+
+		String jsonString = marshal(simpleTO);
+		assertEquals(replaceQuotes("{'operatingSystem':'LINUX'}"), jsonString);
+	}
 }

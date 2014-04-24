@@ -6,6 +6,8 @@ public class SimpleTO {
 
 	private Boolean isActive;
 
+	private OperatingSystem operatingSystem;
+
 	public String getText() {
 		return text;
 	}
@@ -20,5 +22,13 @@ public class SimpleTO {
 
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
+	}
+
+	public OperatingSystem getOperatingSystem() {
+		return operatingSystem;
+	}
+
+	public void setOperatingSystem(OperatingSystem operatingSystem) {
+		this.operatingSystem = operatingSystem;
 	}
 }
