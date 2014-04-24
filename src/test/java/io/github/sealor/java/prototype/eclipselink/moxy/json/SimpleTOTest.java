@@ -10,11 +10,13 @@ public class SimpleTOTest extends AbstractTest {
 
 	@Test
 	public void testMarshallingAndUnmarshalling() throws JAXBException {
-		SimpleTO simpleTO = new SimpleTO();
-		simpleTO.setText("stefan");
+		SimpleTO simpleTO1 = new SimpleTO();
+		simpleTO1.setText("stefan");
 
-		String jsonString = marshal(simpleTO);
-
+		String jsonString = marshal(simpleTO1);
 		assertEquals(replaceQuotes("{'text':'stefan'}"), jsonString);
+
+		SimpleTO simpleTO2 = unmarshal(jsonString, SimpleTO.class);
+		assertEquals("stefan", simpleTO2.getText());
 	}
 }
