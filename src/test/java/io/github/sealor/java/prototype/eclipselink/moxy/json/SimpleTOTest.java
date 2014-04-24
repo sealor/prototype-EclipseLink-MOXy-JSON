@@ -35,6 +35,6 @@ public class SimpleTOTest extends AbstractTest {
 		simpleTO.setOperatingSystem(OperatingSystem.LINUX);
 
 		String jsonString = marshal(simpleTO);
-		assertEquals(replaceQuotes("{'operatingSystem':'LINUX'}"), jsonString);
+		assertEquals(replaceQuotes("{'operatingSystem':'L1nux'}"), jsonString);
 	}
 }
