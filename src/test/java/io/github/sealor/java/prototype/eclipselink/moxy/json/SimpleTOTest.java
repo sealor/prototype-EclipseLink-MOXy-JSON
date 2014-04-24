@@ -19,4 +19,13 @@ public class SimpleTOTest extends AbstractTest {
 		SimpleTO simpleTO2 = unmarshal(jsonString, SimpleTO.class);
 		assertEquals("stefan", simpleTO2.getText());
 	}
+
+	@Test
+	public void testMarshalBooleanWithoutQuotes() throws JAXBException {
+		SimpleTO simpleTO = new SimpleTO();
+		simpleTO.setIsActive(true);
+
+		String jsonString = marshal(simpleTO);
+		assertEquals(replaceQuotes("{'isActive':true}"), jsonString);
+	}
 }
